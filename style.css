@@ -1,103 +1,123 @@
-*{
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(135deg, #6b6bff, #f3a6a8);
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-.container{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #153677,#4e085f);
-    
-    padding: 10px;
-}
-.todo-app{
-    width: 100%;
-    max-width: 540px;
-    background: #fff;
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
-}
-.todo-app h2{
-    color: #002765;
+    height: 100vh; /* اضافه شده تا ارتفاع body کل صفحه باشد */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* برای اطمینان از پوشش کل صفحه */
+  }
+
+  .todo-app {
+    max-width: 600px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    width: 100%; /* عرض به مقدار 100% تغییر داده شد */
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .actions {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-}
-.todo-app h2 img{
-    width: 30px;
+  }
+
+  #input-box {
+    flex-grow: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: border 0.3s;
+  }
+
+  #input-box:focus {
+    border-color: #6b6bff;
+  }
+
+  button {
+    padding: 15px 20px;
     margin-left: 10px;
-    opacity: 80%;
-    border-radius: 40%;
-}
-.row{
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  #add-task {
+    background-color: #ff6347;
+    color: white;
+    transition: background 0.3s;
+  }
+
+  #add-task:hover {
+    background-color: #ff4500;
+  }
+
+  #clear-all {
+    background-color: transparent;
+    color: #ff6347;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #clear-all:hover {
+    color: #ff4500;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0;
+  }
+
+  li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #edeef0;
-    border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
-}
-input{
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
     padding: 10px;
-    font-weight: 14px;
-}
-button{
-    border: none;
-    outline: none;
-    padding: 16px 50px;
-    background:#ff5945;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius:40px ;
-}
-ul li {
-    list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: pointer;
-    position: relative;
-}
-ul li::before{
-    content: '';
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-image:url(img/unchecked.png) ;
-    background-size: cover;
-    background-position: center;
-    top: 3px;
-    right: 28rem;
-}
-ul li.checked{
-    color: #555;
-    text-decoration: line-through;
-}
-ul li.checked::before{
-    background-image: url(img/checked.png);
-    border: none;
-}
-ul li span{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-}
-ul li span:hover{
-    background: #edeef0;
+    border-bottom: 1px solid #e0e0e0;
+  }
 
-}
+  .task-text {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+
+  .checked {
+    text-decoration: line-through;
+    color: gray;
+  }
+
+  .edit,
+  .delete {
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+
+  .edit:hover,
+  .delete:hover {
+    background: #f0ad4e;
+  }  
